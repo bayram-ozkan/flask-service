@@ -1,0 +1,16 @@
+[Unit]
+Description=Flask Web Server
+After=network.target
+
+[Service]
+User=root
+WorkingDirectory=/flask
+ExecStart=/usr/bin/python3 /flask/app.py
+Restart=always
+Environment="FLASK_APP=/flask/app.py"
+Environment="FLASK_ENV=production"
+Environment="FLASK_DEBUG=1"
+
+
+[Install]
+WantedBy=multi-user.target
