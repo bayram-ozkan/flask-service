@@ -1,0 +1,27 @@
+services:
+  nginx:
+#   image: task2_nginx
+    build: ./nginx
+    container_name: nginx_lb
+    ports:
+      - "80:80"
+    networks:
+      - backend
+    depends_on:
+      - task2_server  # Nginx'in task2_server servisine bağlı olduğunu belirtiyoruz.
+
+  task2_server:
+#   image: task2_server
+    build: ../flask
+#    container_name: task2_server
+    expose:
+      - "8080"
+    networks:
+      - backend
+    deploy:
+      replicas: 5  # 3 replica oluşturuluyor.
+    restart: always  # Herhangi bir arıza durumunda otomatik yeniden başlatılır.
+
+networks:
+  backend:
+    driver: bridge
