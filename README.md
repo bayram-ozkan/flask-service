@@ -1,10 +1,11 @@
 
-# Uygulama dockerize ve deploy
+# Uygulamayı kubernetes üzerinden deploy ve ingress
 
 # Adımlar: 
-1. Docker kullanarak flask uygulamayı konteynerleştirin. 
-2. Uygulamayı yönetmek için bir docker-compose.yml dosyası ve yük dengeleme için bir ters proxy (örn. NGINX veya Traefik) oluşturun. 
-3. En az 2 replika yapılandırarak yüksek kullanılabilirlik sağlayın.
+1. Uygulamayı bir Kubernetes kümesine dağıtın. 
+2. Dağıtım için kubectl, Helm veya Kustomize gibi bir araç kullanın. 
+3. Uygulamanın bir LoadBalancer veya Ingress aracılığıyla erişilebilir olduğundan emin olun. 
+4. Uygulama için rolling güncellemelerini gösterin.
 
 
 
