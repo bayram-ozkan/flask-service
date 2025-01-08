@@ -6,7 +6,6 @@
 2. Uygulamayı bir hizmet olarak yönetmek için bir systemd birim dosyası yazın.
 3. Hizmetin önyükleme sırasında otomatik olarak başladığından ve çıktıları bir dosyaya kaydettiğinden emin olun.
 
-# Path lere ve  oluşturacağınız servis adlarına dikkat edin.
 
 ## Servis için link oluşturabilir 
 ```
@@ -43,5 +42,7 @@ sudo systemctl status server.service
 sudo journalctl -u server.service -f
 ```
 
+> [!NOTE]
+> Path lere ve  oluşturacağınız servis adlarına dikkat edin.
 
 
