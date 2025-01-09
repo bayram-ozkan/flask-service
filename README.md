@@ -1,6 +1,6 @@
 # Talos Odaklı Yapılandırma 
 
-#Adımlar: 
+# Adımlar: 
 1. Talos tabanlı bir kümeyi nasıl yöneteceğinizi ve sorunlarını nasıl gidereceğinizi açıklayın. 
 2. Mümkünse, örnek bir iş yükünü dağıtmak için bir yapılandırma örneği sağlayın
 
@@ -22,11 +22,13 @@ talosctl cluster create --workers 3
 ```
 talosctl dashboard --nodes 10.5.0.2
 ```
- 
+
+ ## cluster a bağlanmak için config dosyasını tanımlıyoruz.
  ```
-talosctl kubeconfig    /home/yeager/.kube/talos-default -n 10.5.0.2 
+talosctl kubeconfig    /home/user/.kube/talos-default -n 10.5.0.2 
 ```
 
+## default olarak talos config dosyasını export ediyorum
 ```
 export KUBECONFIG=~/.kube/talos-default
 ```
