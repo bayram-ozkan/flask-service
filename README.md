@@ -33,6 +33,24 @@ talosctl kubeconfig    /home/user/.kube/talos-default -n 10.5.0.2
 export KUBECONFIG=~/.kube/talos-default
 ```
 
+
+## Uygulamamızın bulunduğu dizine geçiş yapalım 
+
+```
+cd kubernetes-talos/
+```
+
+## Talos cluster için hazırladığımz dizindeki yml dosyasını çalıştıralım. 
+```
+kubectl apply -f flask-deployment.yml
+```
+
+## Uygulamaya erişebilmek için port-forward yapalım. Tarayıcıdan 'http://localhost:8080' portundan erişebiliriz.
+```
+kubectl port-forward service/flask-service 8080:80
+
+```
+
 ## talos cluster silme
 ```
 talosctl cluster destroy
